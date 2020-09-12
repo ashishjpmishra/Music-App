@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./music-app-logo.png">
+    <script src="https://kit.fontawesome.com/f06e9a6095.js" crossorigin="anonymous"></script>
+    <title>MusicApp</title>
+</head>
+<body>
+    <header id="topbar">
+        <img src="./music-app-logo.png" alt="App logo" />
+        <h1>MusicApp</h1>
+    </header>
+    <section id="player-container">
+        <div id="player">
+            <img src="./mehrama.jpg" alt="thumbnail cover" id="thumbnail-cover">
+            <div id="thumbnail-center">
+                <img id="thumbnail-image" src="./mehrama.jpg" alt="song thumbnail">
+            </div>
+        </div>
+        <div id="queue">
+            <h3>Queue</h3>
+            <div class="song-list active">
+                <h5>Mehrama - Love Aaj Kal | Darshan Raval</h5>
+            </div>
+            <div class="song-list">
+                <h5>Rahogi Meri - Love Aaj Kal | Arijit Singh</h5>
+            </div>
+            <div class="song-list">
+                <h5>Shayad - Love Aaj Kal | Arijit Singh</h5>
+            </div>
+        </div>
+    </section>
+    <section id="controls">
+        <audio src="./Mehrama - Love Aaj Kal.mp3" id="song"></audio>
+        <div id="music-control">
+            <i class="fas fa-step-backward icons" id="backward" ></i>
+            <i class="fas fa-play icons" id="play"></i>
+            <i class="fas fa-pause icons" id="pause"></i>
+            <i class="fas fa-step-forward icons" id="forward"></i>
+        </div>
+        <div id="song-info">
+            <div><img src="./mehrama.jpg" alt="thumbnail" id="thumbnail-control"></div>
+            <h5 id="song-name">Mehrama - Love Aaj Kal| Darshan Rawal</h5>
+        </div>
+        
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
