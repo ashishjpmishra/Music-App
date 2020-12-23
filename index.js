@@ -49,7 +49,6 @@ const nextSong = () =>{
     currentSong[songsQueueIndex].classList.add("active");
     isPlaying = true;
     playPause();
-    // if(songsQueueIndex == 2 ) songsQueueIndex = -1;
     console.log(songsQueueIndex);
 
 }
@@ -68,13 +67,11 @@ const previousSong = () =>{
     currentSong[songsQueueIndex].classList.add("active");
     isPlaying = true;
     playPause();
-    // if(songsQueueIndex == 0 ) songsQueueIndex = 2;
-    console.log(songsQueueIndex);
+    // console.log(songsQueueIndex);
 
 }
 
 playButton.onclick = () =>{
-    // alert("play clicked")
     playPause();
    
 }
@@ -89,7 +86,6 @@ coverPlay.onclick = () =>{
 }
 
 nextButton.onclick = () =>{
-    // alert("next clicked")
     nextSong();
 
 }
@@ -131,4 +127,6 @@ progressBar.addEventListener('click',()=>{
     song.currentTime = progressBar.value;
 })
 
-// console.log(song.currentTime)
+song.addEventListener("ended", ()=>{
+    nextSong();
+})
