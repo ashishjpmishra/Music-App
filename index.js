@@ -8,13 +8,15 @@ const songName = document.getElementById("song-name");
 const songThumbnail = document.getElementById("thumbnail-image");
 const coverThumbnail = document.getElementById("thumbnail-cover");
 const controlThumbnail = document.getElementById("thumbnail-control");
-var currentSong = document.getElementsByClassName("song-list");
+const currentSong = document.getElementsByClassName("song-list");
+const progressBar = document.getElementById("progress-bar");
+
 
 
 var songsQueue = ['Mehrama - Love Aaj kal.mp3', 'Rahogi Meri - Love Aaj Kal.mp3','Shayad - Love Aaj Kal.mp3'], 
     songsQueueIndex = 0,
     thumbnails = ['mehrama.jpg', 'rahogi-meri.jpg','shayad.jpg']
-    title = ['Mehrama - Love Aaj kal | Darshan Raval', 'Rahogi Meri - Love Aaj Kal | Arijit Singh','Shayad - Love Aaj Kal | Arijit Singh'];
+    title = ['Mehrama - Love Aaj kal | Darshan RaWal', 'Rahogi Meri - Love Aaj Kal | Arijit Singh','Shayad - Love Aaj Kal | Arijit Singh'];
 
 var isPlaying = true;
 const playPause = () => {
@@ -96,12 +98,6 @@ previousButton.onclick = () =>{
     previousSong();
 }
 
-// for(var i=0; i< song.length ; i++){
-//     currentSong[i].onclick = () =>{
-//         alert(`${i} clicked`)
-//         // song[i].play();
-//     }
-// }
 
 currentSong[0].onclick = () =>{
     songsQueueIndex = -1;
@@ -115,3 +111,24 @@ currentSong[2].onclick = () =>{
     songsQueueIndex = 1;
     nextSong();
 }
+
+const updateProgress = ()=>{
+    progressBar.max = song.duration;
+    progressBar.value = song.currentTime;
+}
+
+setInterval(updateProgress, 700);
+
+
+progressBar.addEventListener('change',()=>{
+    song.currentTime = progressBar.value;
+    if(song.currentTime === song.duration){
+        nextSong();
+    }
+})
+
+progressBar.addEventListener('click',()=>{
+    song.currentTime = progressBar.value;
+})
+
+// console.log(song.currentTime)

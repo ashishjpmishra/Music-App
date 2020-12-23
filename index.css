@@ -10,7 +10,7 @@ body{
 }
 
 #topbar{
-    height:10vh;
+    height:8vh;
     box-shadow: 0 2px 2px #ccc;
     display: flex;
     align-items: center;
@@ -85,10 +85,17 @@ body{
     background-color: rgb(39, 38, 38);
 }
 
+#controls-wrapper{
+    width: 100%;
+    background-color: #212121;
+}
+
 
 #controls{
     padding: 0 15%;
+    width: 100%;
     height: 10vh;
+    box-sizing: border-box;
     background-color: #212121;
     display: flex;
     align-items: center;
@@ -96,6 +103,38 @@ body{
     color: #fff;
 }
 
+
+#progress-bar{
+    margin-top: 0;
+    height:100%;
+    width: 100%;
+    background-color: #747171;
+    outline: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 80px;
+      -webkit-appearance: none;
+      background-color: #0e0e0d;
+    }
+
+    input[type='range']::-webkit-slider-runnable-track {
+        height: 5px;
+        -webkit-appearance: none;
+        color: #5c5f5f;
+        margin-top: -1px;
+      }
+      
+      input[type='range']::-webkit-slider-thumb {
+        width: 1px;
+        -webkit-appearance: none;
+        height: 1px;
+        cursor: progress;
+        background: #434343;
+        box-shadow: 0 0 0 5px #250404;
+      }
 #music-control{
     margin-right: 30px;
     display: flex;
